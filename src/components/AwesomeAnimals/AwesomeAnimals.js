@@ -1,5 +1,5 @@
-// src/components/countButton.js
-import React, { useState } from "react";
+// src/components/AwesomeAnimals/AwesomeAnimals.js
+import React from "react";
 
 export default function AwesomeAnimals() {
   const animals = [
