@@ -1,6 +1,8 @@
 // src/components/ArticleList.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
+import Timeout from "await-timeout";
+import Axios from "axios";
 
 export default function ArticleList() {
   const [articles, set_articles] = useState([
@@ -22,6 +24,15 @@ export default function ArticleList() {
         "So yeah, you won't be able to look these images up. They're placeholders",
     },
   ]);
+
+  useEffect(() => {
+    async function waitForATimer() {
+      console.log("A");
+      await Timeout.set(2000); // time in milliseconds!
+      console.log("B");
+    }
+    waitForATimer();
+  }, [articles]);
 
   return (
     <div>
